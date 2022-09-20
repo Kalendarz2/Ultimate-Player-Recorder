@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:entity",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:stick",
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": {"score":{"name":"$id","objective":"rc_id"}}
+						}
+					]
+				}
+			]
+		}
+	]
+}

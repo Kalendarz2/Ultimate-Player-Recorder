@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "gravel",
+    "dirt",
+    "farmland",
+    "coarse_dirt",
+    "clay",
+    "podzol"
+  ]
+}

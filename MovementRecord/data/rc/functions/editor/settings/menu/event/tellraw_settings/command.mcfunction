@@ -1,0 +1,3 @@
+execute store result score $frame_edit rc_event run data get entity @s data.TempEvent[0].Command
+execute if score $frame_edit rc_event matches ..45 run data modify storage minecraft:animation RecordSettings.EditorEventType set value '[{"text":"Cmd: ","color":"dark_green"},{"nbt":"data.TempEvent[0].Command","entity":"@s","color":"white"}]'
+execute if score $frame_edit rc_event matches 46.. run data modify storage minecraft:animation RecordSettings.EditorEventType set value '[{"text":"Cmd: ","color":"dark_green"},{"text":"Command*","color":"gray","hoverEvent":{"action":"show_text","contents":[{"nbt":"data.TempEvent[0].Command","entity":"@s","color":"white"}]}}]'

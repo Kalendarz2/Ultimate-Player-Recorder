@@ -2,7 +2,7 @@
 The most advanced player recording datapack. Allows you to record an infinite number of long animations without tickrate drops, play multiple coordinated animations at once, record destroyed and placed blocks, change multiple animation settings, has an editor that allows you to change all previously recorded actions, and many more.
 
 ## How to use
-To start recording, use the ``/trigger record`` command or ``/trigger menu`` to access all the features of the datapack. To execute an animation, get it as an item and throw it at the selected mob, or give it an ``animation`` scoreboard equivalent to the id of your animation. An ongoing animation can be stopped by giving the ``stop`` tag, and ended by setting the scoreboard to 0. If you don't use features such as dynamic player recording, you should remove the ``MovementRecord`` datapack after completing your map. Detailed instructions on how to use all modules can be found in the wiki tab *(W.I.P.)*.
+To start recording, use the ``/trigger record`` command or ``/trigger menu`` to access all the features of the datapack. To execute an animation, get it as an item and throw it at the selected entity, or give it an ``animation`` scoreboard equivalent to the id of your animation. An ongoing animation can be stopped by giving the ``stop`` tag, and ended by setting the scoreboard to 0. If you don't use features such as dynamic player recording, you should remove the ``MovementRecord`` datapack after completing your map. Detailed instructions on how to use all modules can be found in the wiki tab *(W.I.P.)*.
 
 ## Credit
 

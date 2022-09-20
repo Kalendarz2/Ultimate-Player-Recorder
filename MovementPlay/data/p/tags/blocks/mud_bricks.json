@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "mud_bricks",
+    "mud_brick_stairs",
+    "mud_brick_wall",
+    "mud_brick_slab"
+  ]
+}

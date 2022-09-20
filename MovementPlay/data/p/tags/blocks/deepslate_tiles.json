@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "deepslate_tiles",
+    "deepslate_tile_slab",
+    "deepslate_tile_stairs",
+    "deepslate_tile_wall",
+    "cracked_deepslate_tiles"
+  ]
+}

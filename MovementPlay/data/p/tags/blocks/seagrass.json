@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "seagrass",
+    "tall_seagrass",
+    "kelp",
+    "kelp_plant",
+    "#minecraft:coral_plants"
+  ]
+}

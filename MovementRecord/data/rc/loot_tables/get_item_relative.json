@@ -1,0 +1,39 @@
+{
+	"type": "minecraft:entity",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:blue_dye",
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"name": ["",{"nbt":"GetAnimation.Name","storage":"minecraft:animation","italic":"false","color":"aqua","bold":"true"},{"text":" | ","italic":"false","bold":"true","color":"gold"},{"nbt":"GetAnimation.Length","storage":"minecraft:animation","italic":"false"}]
+						},
+						{
+							"function": "minecraft:copy_nbt",
+							"source": {
+								"type": "minecraft:storage",
+								"source": "minecraft:animation"
+							},
+							"ops": [
+								{
+									"source": "GetAnimation",
+									"target": "Animation",
+									"op": "replace"
+								}
+							]
+						},
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{Animation:{id:0}}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

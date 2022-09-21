@@ -17,6 +17,8 @@ function rc:id/check/all
 #Prepare array
 function rc:editor/close/save/clear_storage
 data modify storage minecraft:animation EditAnimation set from storage minecraft:animation Edit
+data remove storage minecraft:animation EditAnimation.BackArray
+data remove storage minecraft:animation EditAnimation.FrontArray
 execute store result storage minecraft:animation EditAnimation.id int 1 run scoreboard players get $id rc_id
 execute store result storage minecraft:animation EditAnimation.Length int 1 if entity @e[tag=selected_frames]
 data modify storage minecraft:animation EditAnimation.Name set value "From Selection"

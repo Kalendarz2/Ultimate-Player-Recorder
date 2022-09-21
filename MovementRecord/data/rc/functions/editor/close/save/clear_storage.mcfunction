@@ -9,3 +9,4 @@ data remove storage minecraft:animation Edit.PlacedData
 data remove storage minecraft:animation Edit.BrokenData
 data remove storage minecraft:animation Edit.TempData
 data remove storage minecraft:animation Edit.ConvertData
+data remove storage minecraft:animation Edit.FramesDelay

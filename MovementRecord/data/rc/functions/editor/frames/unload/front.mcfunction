@@ -10,5 +10,5 @@ execute as @e[tag=frame] if score @s rc_time > $frame_array rc_time run tag @s a
 function rc:editor/frames/sort
 
 #Append array
-execute at @s as @e[tag=sort_frame,sort=furthest] run data modify storage minecraft:animation Edit.FrontArray append from entity @s data.Frame
+execute at @s as @e[tag=sort_frame,sort=furthest] run data modify storage minecraft:animation Edit.FrontArray prepend from entity @s data.Frame
 kill @e[tag=sort_frame]

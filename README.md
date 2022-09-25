@@ -6,6 +6,8 @@ The most advanced player recording datapack. Allows you to record an infinite nu
 ## How to use
 To start recording, use the ``/trigger record`` command or ``/trigger menu`` to access all the features of the datapack. To execute an animation, get it as an item and throw it at the selected entity, or give it an ``animation`` scoreboard equivalent to the id of your animation. An ongoing animation can be stopped by giving the ``stop`` tag, and ended by setting the scoreboard to 0. If you don't use features such as dynamic player recording, you should remove the ``MovementRecord`` datapack after completing your map. Detailed instructions on how to use all modules can be found in the [wiki](https://github.com/Kalendarz2/Ultimate-Player-Recorder/wiki) tab.
 
+**Currently, the datapack does not work on modified servers, such as Spigot, or Paper.**
+
 ## Credit
 
 **In most cases, you don't have to credit me or this datapacks in any way.**

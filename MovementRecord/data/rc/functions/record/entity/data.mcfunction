@@ -1,7 +1,7 @@
 playsound minecraft:entity.experience_orb.pickup master @a
 
 #Set nbt
-data modify storage minecraft:animation TempFrame.TempEntity set value {Type:0,Pos:[0.0,0.0,0.0],Rot:[0.0,0.0,0.0],Motion:[0.0,0.0,0.0]}
+data modify storage minecraft:animation TempFrame.TempEntity set value {Type:0,Pos:[0.0,0.0,0.0],Rot:[0.0,0.0],Motion:[0.0,0.0,0.0]}
 execute store result storage minecraft:animation TempFrame.TempEntity.Motion[0] double 0.01 run data get entity @s Motion[0] 100
 execute store result storage minecraft:animation TempFrame.TempEntity.Motion[1] double 0.01 run data get entity @s Motion[1] 100
 execute store result storage minecraft:animation TempFrame.TempEntity.Motion[2] double 0.01 run data get entity @s Motion[2] 100

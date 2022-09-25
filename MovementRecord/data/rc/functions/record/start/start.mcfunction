@@ -7,9 +7,11 @@ tag @s add record_start
 execute store result score $rc_tick rc_id run data get storage minecraft:animation TempAnimation.Frequency
 
 #Book
-data modify storage minecraft:animation TempAnimation.Name set from entity @s[nbt={SelectedItem:{tag:{Name:1}}}] SelectedItem.tag.title
+execute if data storage minecraft:animation {Bukkit:0} run data modify storage minecraft:animation TempAnimation.Name set from entity @s Inventory[{id:"minecraft:written_book",tag:{Name:1}}].tag.title
+execute if data storage minecraft:animation {Bukkit:1} run data modify storage minecraft:animation TempAnimation.Name set from entity @s Inventory[{id:"minecraft:written_book",tag:{pages:['{"text":"§2Sign this book with the name of your animation"}']}}].tag.title
 clear @s minecraft:written_book{Name:1}
 clear @s minecraft:written_book{Settings:1}
+execute if data storage minecraft:animation {Bukkit:1} run clear @s minecraft:written_book
 kill @e[tag=rc_minecart_group]
 
 #Spawn block markers

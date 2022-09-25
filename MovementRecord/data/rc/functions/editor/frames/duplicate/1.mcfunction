@@ -1,5 +1,6 @@
 #Save block changes
 execute as @e[tag=selected_frame] run function rc:editor/frames/block/save/selected_frame
+execute as @e[tag=selected_frame] run function rc:editor/frames/entity/save/selected_frame
 
 #Duplicate frame
 execute as @e[tag=frame_general] if score @s rc_id > $frame_edit rc_id run scoreboard players add @s rc_id 1

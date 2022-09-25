@@ -2,6 +2,9 @@
 execute as @e[tag=has_block] run function rc:editor/frames/block/save/placed_main
 execute as @e[tag=remove_block] run function rc:editor/frames/block/save/destroyed_main
 
+#Save entities
+execute as @e[tag=has_entity] run function rc:editor/frames/entity/save/save
+
 #Delay
 data modify storage minecraft:animation Edit.FramesDelay set from storage minecraft:animation Edit.Frames
 

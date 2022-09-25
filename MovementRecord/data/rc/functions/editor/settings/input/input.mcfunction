@@ -37,6 +37,9 @@ execute if score @s edit matches 46 as @e[tag=selected_frames] run data modify e
 #Blocks
 execute if score @s edit matches 200..299 run function rc:editor/settings/input/blocks
 
+#Entity
+execute if score @s edit matches 300..399 run function rc:editor/settings/input/entity
+
 #Event
 execute if score @s edit matches 400..499 run function rc:editor/settings/input/event
 

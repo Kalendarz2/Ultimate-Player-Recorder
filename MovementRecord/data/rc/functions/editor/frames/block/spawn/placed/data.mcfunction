@@ -10,6 +10,5 @@ execute at @s run particle minecraft:composter ~ ~0.5 ~
 data modify entity @s BlockState.Name set from storage minecraft:animation Edit.PlacedData[0].Name
 data modify entity @s BlockState.Properties set from storage minecraft:animation Edit.PlacedData[0].Properties
 data modify entity @s TileEntityData set from storage minecraft:animation Edit.PlacedData[0].TileEntityData
-execute if data storage minecraft:animation Edit.PlacedData[0].U run tag @s add unstable_block
 scoreboard players operation @s rc_id = @e[tag=this_a,limit=1] rc_id
 tag @s remove this_b

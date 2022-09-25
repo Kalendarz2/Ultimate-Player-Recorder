@@ -1,11 +1,10 @@
 #Cancel
-execute unless data entity @s Inventory[{tag:{Name:1}}] run function rc:record/cancel
+execute if data storage minecraft:animation {Bukkit:0} unless data entity @s Inventory[{tag:{Name:1}}] run function rc:record/cancel
 execute unless data entity @s Inventory[{tag:{Settings:1}}] run function rc:record/cancel
 
 #Start
-execute if data entity @s Inventory[{tag:{Name:1},id:"minecraft:written_book"}] if data storage minecraft:animation TempAnimation{Sync:0} run function rc:record/start/start
-execute if data entity @s Inventory[{tag:{Name:1},id:"minecraft:written_book"}] if data storage minecraft:animation TempAnimation{Sync:1} run function rc:record/start/wait_sync
-execute if data entity @s Inventory[{tag:{Name:1},id:"minecraft:written_book"}] if data storage minecraft:animation TempAnimation{Sync:2} run function rc:record/start/wait_move
+execute if data storage minecraft:animation {Bukkit:0} if data entity @s Inventory[{id:"minecraft:written_book",tag:{Name:1}}] run function rc:record/start/settings/trigger
+execute if data storage minecraft:animation {Bukkit:1} if data entity @s Inventory[{id:"minecraft:written_book",tag:{pages:['{"text":"§2Sign this book with the name of your animation"}']}}] run function rc:record/start/settings/trigger
 tag @e remove rc_animation_trigger
 
 #Minecart

@@ -7,3 +7,4 @@ execute if score $frame_edit rc_id > $editor rc_frames run scoreboard players op
 execute store result bossbar minecraft:editor max run scoreboard players get $editor rc_frames
 execute store result storage minecraft:animation Edit.Length int 1 run scoreboard players get $editor rc_frames
 kill @e[tag=display_block]
+kill @e[tag=display_entity]

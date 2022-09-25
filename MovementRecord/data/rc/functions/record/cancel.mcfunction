@@ -8,6 +8,7 @@ kill @e[tag=rc_block_check]
 kill @e[tag=record_wait_move]
 clear @a carrot_on_a_stick{Carrot:1}
 clear @a written_book{Settings:1}
+execute if data storage minecraft:animation {Bukkit:1} run clear @s minecraft:written_book
 tag @s remove is_recording
 tag @s remove record_get
 tag @s remove record_start

@@ -5,25 +5,19 @@ execute as @e[tag=remove_block] run function rc:editor/frames/block/save/destroy
 #Save entities
 execute as @e[tag=has_entity] run function rc:editor/frames/entity/save/save
 
-#Delay
-data modify storage minecraft:animation Edit.FramesDelay set from storage minecraft:animation Edit.Frames
-
-#Save BackArray
-data modify storage minecraft:animation Edit.Frames set from storage minecraft:animation Edit.BackArray
+#Save FrontArray
+data modify storage minecraft:animation Edit.Frames prepend from storage minecraft:animation Edit.FrontArray[]
 
 #Sort frames
 tag @e[tag=frame] add sort_frame
 function rc:editor/frames/sort
 tag @e remove sort_frame
 
-execute at @s as @e[tag=frame,sort=nearest] run data modify storage minecraft:animation Edit.Frames append from entity @s data.Frame
+execute at @s as @e[tag=frame,sort=furthest] run data modify storage minecraft:animation Edit.Frames prepend from entity @s data.Frame
 kill @e[tag=frame]
 
-#Save FrontArray
-execute if data storage minecraft:animation Edit.FrontArray[0] run function rc:editor/close/save/front_array
-
-#Save unused frames
-execute if data storage minecraft:animation Edit.FramesDelay[0] at @s run function rc:editor/close/save/unused
+#Save BackArray
+data modify storage minecraft:animation Edit.Frames prepend from storage minecraft:animation Edit.BackArray[]
 
 #Recreate main array
 data modify storage minecraft:animation EditAnimation set from storage minecraft:animation Animation

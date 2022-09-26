@@ -30,7 +30,9 @@ execute as @e[tag=pl_entity_temp] store result score @s pl_id run data get entit
 
 #Save data on the marker
 execute as @e[tag=pl_entity_data_temp] run function p:events/entity/temp_data
-tag @e[tag=pl_entity_temp] remove pl_entity_temp
+data modify entity @e[tag=pl_entity_data_temp,limit=1] data.Entity.Owner set from entity @s UUID
+tag @e remove pl_entity_temp
+tag @e remove pl_entity_data_temp
 
 #Loop
 data remove storage minecraft:play TempFrame.Entity[0]

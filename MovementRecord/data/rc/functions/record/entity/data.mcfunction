@@ -1,18 +1,21 @@
 playsound minecraft:entity.experience_orb.pickup master @a
 
 #Set nbt
-data modify storage minecraft:animation TempFrame.TempEntity set value {Type:0,Pos:[0.0,0.0,0.0],Rot:[0.0,0.0],Motion:[0.0,0.0,0.0]}
+data remove storage minecraft:animation TempFrame.TempEntity
+data modify storage minecraft:animation TempFrame.TempEntity set value {Type:0,Pos:[0.0,0.0,0.0],Rot:[0.0f,0.0f],Motion:[0.0,0.0,0.0]}
 execute store result storage minecraft:animation TempFrame.TempEntity.Motion[0] double 0.01 run data get entity @s Motion[0] 100
 execute store result storage minecraft:animation TempFrame.TempEntity.Motion[1] double 0.01 run data get entity @s Motion[1] 100
 execute store result storage minecraft:animation TempFrame.TempEntity.Motion[2] double 0.01 run data get entity @s Motion[2] 100
 execute store result storage minecraft:animation TempFrame.TempEntity.Pos[0] double 0.01 run data get entity @s Pos[0] 100
 execute store result storage minecraft:animation TempFrame.TempEntity.Pos[1] double 0.01 run data get entity @s Pos[1] 100
 execute store result storage minecraft:animation TempFrame.TempEntity.Pos[2] double 0.01 run data get entity @s Pos[2] 100
-execute store result storage minecraft:animation TempFrame.TempEntity.Rot[0] float 0.01 run data get entity @s Rotation[0] 100
-execute store result storage minecraft:animation TempFrame.TempEntity.Rot[1] float 0.01 run data get entity @s Rotation[1] 100
+execute store result storage minecraft:animation TempFrame.TempEntity.Rot[0] float 1 run data get entity @s Rotation[0] 1
+execute store result storage minecraft:animation TempFrame.TempEntity.Rot[1] float 1 run data get entity @s Rotation[1] 1
 
 execute if entity @s[type=item] run data modify storage minecraft:animation TempFrame.TempEntity.Item set from entity @s Item
 execute if entity @s[type=potion] run data modify storage minecraft:animation TempFrame.TempEntity.Item set from entity @s Item
+execute if entity @s[type=#minecraft:arrows] run data modify storage minecraft:animation TempFrame.TempEntity.crit set from entity @s crit
+execute if entity @s[type=#minecraft:arrows] run data modify storage minecraft:animation TempFrame.TempEntity.damage set from entity @s damage
 
 #Set entity type
 execute if entity @s[type=item] run data modify storage minecraft:animation TempFrame.TempEntity.Type set value 1

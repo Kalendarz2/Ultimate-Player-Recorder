@@ -29,6 +29,13 @@ execute at @e[tag=edit_minecart_stand] unless entity @p[distance=..5] run kill @
 #Block update
 execute as @e[tag=display_block,scores={rc_time=1..}] at @s run function rc:editor/frames/block/update
 
+#Entity motion
+scoreboard players add @e[tag=display_entity] rc_time 1
+execute as @e[tag=display_entity,scores={rc_time=1}] at @s run function rc:editor/frames/entity/projectile/check_motion
+scoreboard players set @e[tag=display_entity,scores={rc_time=40..}] rc_time 0
+
+execute as @e[tag=editor_entity_data] run function rc:editor/frames/entity/projectile/trajectory
+
 #Ticking
 execute if score @s edit matches ..1 if score $editor rc_shift matches 1 run function rc:editor/ticking
 

@@ -26,7 +26,7 @@ execute if data storage minecraft:play Info{Placed:1} if data storage minecraft:
 execute if data storage minecraft:play Info{Broken:1} if data storage minecraft:play TempFrame.Broken[0] run function p:events/destroy/block
 
 #Entity
-execute at @s if data storage minecraft:play TempFrame.Entity[0] positioned ~ ~1.5 ~ run function p:events/entity/entity
+execute if data storage minecraft:play Info{Spawned:1} at @s if data storage minecraft:play TempFrame.Entity[0] positioned ~ ~1.5 ~ run function p:events/entity/entity
 
 #Events
 execute if data storage minecraft:play TempFrame.Event[0] run function p:events/event

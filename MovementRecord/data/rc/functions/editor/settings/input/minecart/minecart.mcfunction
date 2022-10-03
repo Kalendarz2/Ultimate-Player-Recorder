@@ -6,4 +6,8 @@ execute if entity @s[tag=edit_minecart7] unless entity @s[nbt={Command:""}] run 
 
 execute if entity @s[tag=edit_minecart8] store success score @s rc_event run data modify storage minecraft:animation Edit.TempData set from entity @s Command
 execute if entity @s[tag=edit_minecart8] unless entity @s[nbt={Command:""}] if score @s rc_event matches 1 as @e[tag=selected_frame] run function rc:editor/frames/event/edit/save
-execute if entity @s[tag=edit_minecart9] unless entity @s[nbt={Command:"minecraft:"}] run function rc:editor/settings/input/minecart/select_blocks
+execute if entity @s[tag=edit_minecart9] unless entity @s[nbt={Command:""}] unless entity @s[nbt={Command:"minecraft:"}] run function rc:editor/settings/input/minecart/select_blocks
+
+execute if entity @s[tag=edit_minecart10] unless entity @s[nbt={Command:'data modify storage minecraft:animation Edit.TempData set value {id:"minecraft:",Count:1b,tag:{}}'}] run function rc:editor/settings/input/minecart/run_command
+execute if entity @s[tag=edit_minecart11] unless entity @s[nbt={Command:""}] unless entity @s[nbt={Command:"minecraft:"}] run function rc:editor/settings/input/minecart/potion
+execute if entity @s[tag=edit_minecart12] unless entity @s[nbt={Command:"data modify storage minecraft:animation Edit.TempData set value {}"}] run function rc:editor/settings/input/minecart/run_command

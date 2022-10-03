@@ -15,8 +15,10 @@ execute unless score @s edit matches 167312 run data modify entity @e[tag=select
 execute if score @s edit matches 2.. run function rc:editor/settings/input/input
 
 #Minecart command delay
-execute if score $frame_edit rc_pos_x matches 2..3 run function rc:editor/settings/input/minecart/store
+execute if score $frame_edit rc_pos_x matches 1..3 run function rc:editor/settings/input/minecart/store
+execute if score $frame_edit rc_pos_x matches 4 run function rc:editor/settings/input/minecart/nbt
 execute if score $frame_edit rc_pos_x matches 5 run function rc:editor/settings/input/minecart/score
+
 scoreboard players reset $frame_edit rc_pos_x
 
 #Minecart commands
@@ -30,11 +32,16 @@ execute at @e[tag=edit_minecart_stand] unless entity @p[distance=..5] run kill @
 execute as @e[tag=display_block,scores={rc_time=1..}] at @s run function rc:editor/frames/block/update
 
 #Entity motion
-scoreboard players add @e[tag=display_entity] rc_time 1
-execute as @e[tag=display_entity,scores={rc_time=1}] at @s run function rc:editor/frames/entity/projectile/check_motion
+scoreboard players add @e[tag=selected_entity] rc_time 1
+execute as @e[tag=selected_entity,scores={rc_time=1}] at @s run function rc:editor/frames/entity/projectile/check_motion
 scoreboard players set @e[tag=display_entity,scores={rc_time=40..}] rc_time 0
 
 execute as @e[tag=editor_entity_data] run function rc:editor/frames/entity/projectile/trajectory
+
+#Entity data
+execute as @e[type=item,tag=display_entity] run data merge entity @s {PickupDelay:-32000,Age:-32000}
+execute as @e[tag=display_entity] store result entity @s Rotation[0] float 0.1 run scoreboard players get @s rc_click
+execute as @e[tag=display_entity] store result entity @s Rotation[1] float 0.1 run scoreboard players get @s rc_shift
 
 #Ticking
 execute if score @s edit matches ..1 if score $editor rc_shift matches 1 run function rc:editor/ticking

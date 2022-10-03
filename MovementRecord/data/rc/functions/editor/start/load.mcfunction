@@ -51,6 +51,9 @@ execute at @s run summon minecraft:armor_stand ~ ~ ~ {Tags:["editor"],NoGravity:
 execute as @e[tag=selected_frame] if data entity @s data.Frame.Placed[0] run function rc:editor/frames/block/spawn/placed/placed
 execute as @e[tag=selected_frame] if data entity @s data.Frame.Broken[0] run function rc:editor/frames/block/spawn/destroyed/destroyed
 
+#Summon entities
+execute as @e[tag=selected_frame] if data entity @s data.Frame.Entity[0] run function rc:editor/frames/entity/spawn/load
+
 #Save gamerule
 execute if entity @s[tag=!menu_open] store result score $feedback rc_time run gamerule sendCommandFeedback
 gamerule sendCommandFeedback false

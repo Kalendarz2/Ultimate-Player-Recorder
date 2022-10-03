@@ -24,7 +24,10 @@ execute if score @s edit matches 101 run scoreboard players set $editor rc_menu 
 execute if score @s edit matches 102 run scoreboard players set $editor rc_menu 2
 execute if score @s edit matches 103 run scoreboard players set $editor rc_menu 3
 execute if score @s edit matches 104 run scoreboard players set $editor rc_menu 4
+
 execute if score @s edit matches 105 run scoreboard players set $editor rc_menu 5
+execute if score @s edit matches 106 run scoreboard players set $editor rc_menu 6
+execute if score @s edit matches 107 run scoreboard players set $editor rc_menu 7
 
 #Move frames
 execute if score @s edit matches 20..41 run function rc:editor/settings/input/move

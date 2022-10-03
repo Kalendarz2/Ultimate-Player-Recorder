@@ -3,7 +3,7 @@ execute if score @s edit matches 12 run function rc:editor/frames/duplicate/dupl
 execute if score @s edit matches 13 run function rc:editor/frames/delete/delete
 
 #Copy/Paste frame
-execute if score @s edit matches 10 as @e[tag=selected_frame] run function rc:editor/frames/entity/save/selected_frame
+execute if score @s edit matches 10 as @e[tag=selected_frame,tag=has_entity] run function rc:editor/frames/entity/save/selected_frame
 execute if score @s edit matches 10 as @e[tag=selected_frame] run function rc:editor/frames/block/save/selected_frame
 execute if score @s edit matches 10 run data modify storage minecraft:animation Edit.Clipboard set from entity @e[tag=selected_frame,limit=1] data.Frame
 execute if score @s edit matches 11 as @e[tag=selected_frames] run data modify entity @s data.Frame set from storage minecraft:animation Edit.Clipboard 
@@ -36,7 +36,7 @@ tag @e[tag=selected_frame] add selected_frames
 execute as @e[tag=has_block,tag=!selected_frames] run function rc:editor/frames/block/save/placed_main
 execute as @e[tag=remove_block,tag=!selected_frames] run function rc:editor/frames/block/save/destroyed_main
 tag @e[tag=frame,tag=!selected_frames] remove has_block
-tag @e[tag=frame,tag=!selected_frames] remove remove_block
+tag @e[tag=frame,tag=!selected_frames] remove remove_entity
 
 #Summon blocks
 execute as @e[tag=selected_frames,tag=!has_block] if data entity @s data.Frame.Placed[0] run function rc:editor/frames/block/spawn/placed/placed
@@ -47,7 +47,7 @@ execute as @e[tag=has_entity,tag=!selected_frames] run function rc:editor/frames
 tag @e[tag=frame,tag=!selected_frames] remove has_entity
 
 #Summon entities
-execute as @e[tag=selected_frames,tag=!has_entity] if data entity @s data.Frame.Entity[0] run function rc:editor/frames/entity/load
+execute as @e[tag=selected_frames,tag=!has_entity] if data entity @s data.Frame.Entity[0] run function rc:editor/frames/entity/spawn/load
 
 #Frame count limit
 execute if score @s edit matches ..7 if score $editor rc_frames matches 1000.. run function rc:editor/frames/manage

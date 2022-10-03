@@ -16,6 +16,7 @@ execute if entity @s[type=item] run data modify storage minecraft:animation Temp
 execute if entity @s[type=potion] run data modify storage minecraft:animation TempFrame.TempEntity.Item set from entity @s Item
 execute if entity @s[type=#minecraft:arrows] run data modify storage minecraft:animation TempFrame.TempEntity.crit set from entity @s crit
 execute if entity @s[type=#minecraft:arrows] run data modify storage minecraft:animation TempFrame.TempEntity.damage set from entity @s damage
+execute if entity @s[type=arrow] run data modify storage minecraft:animation TempFrame.TempEntity.Potion set from entity @s Potion
 
 #Set entity type
 execute if entity @s[type=arrow] run data modify storage minecraft:animation TempFrame.TempEntity.Type set value 1

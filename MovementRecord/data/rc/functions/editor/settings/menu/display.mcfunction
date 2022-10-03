@@ -27,8 +27,8 @@ execute if score $editor rc_menu matches 0 run function rc:editor/settings/menu/
 execute if score $editor rc_menu matches 1 run function rc:editor/settings/menu/position
 execute if score $editor rc_menu matches 2 run function rc:editor/settings/menu/rotation
 execute if score $editor rc_menu matches 3 run function rc:editor/settings/menu/blocks
-execute if score $editor rc_menu matches 4 run function rc:editor/settings/menu/entity
-execute if score $editor rc_menu matches 5 run function rc:editor/settings/menu/event/event
+execute if score $editor rc_menu matches 4 run function rc:editor/settings/menu/event/event
+execute if score $editor rc_menu matches 5..7 run function rc:editor/settings/menu/entity
 
 tellraw @s {"text":"o=============================o","strikethrough":true,"color":"gray"}
 

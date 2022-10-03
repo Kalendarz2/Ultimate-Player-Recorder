@@ -2,5 +2,5 @@ data modify storage minecraft:animation Edit.EntityData set from entity @s data.
 tag @s add has_entity
 
 tag @s add this_a
-function rc:editor/frames/entity/summon
+function rc:editor/frames/entity/spawn/summon
 tag @s remove this_a

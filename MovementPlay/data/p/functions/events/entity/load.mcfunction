@@ -4,14 +4,8 @@ execute as @e[tag=pl_entity_data] if score @s pl_id = @s pl_id2 run tag @s add t
 
 #Move data
 data merge entity @s {NoGravity:0}
-data modify entity @s Pos set from entity @e[tag=this_b,limit=1] data.Entity.Pos
-data modify entity @s Rotation set from entity @e[tag=this_b,limit=1] data.Entity.Rot
-data modify entity @s Motion set from entity @e[tag=this_b,limit=1] data.Entity.Motion
-data modify entity @s Owner set from entity @e[tag=this_b,limit=1] data.Entity.Owner
-data modify entity @s[type=item] Item set from entity @e[tag=this_b,limit=1] data.Entity.Item
-data modify entity @s[type=potion] Item set from entity @e[tag=this_b,limit=1] data.Entity.Item
-data modify entity @s[type=#minecraft:arrows] crit set from entity @e[tag=this_b,limit=1] data.Entity.crit
-data modify entity @s[type=#minecraft:arrows] damage set from entity @e[tag=this_b,limit=1] data.Entity.damage
+data modify entity @s {} merge from entity @e[tag=this_b,limit=1] data.Entity
+data modify entity @s {} merge from entity @e[tag=this_b,limit=1] data.Entity.NBT
 
 #Playsound
 execute at @s[type=#p:snowball_sound] run playsound entity.snowball.throw master @a ~ ~ ~ 1 0.5

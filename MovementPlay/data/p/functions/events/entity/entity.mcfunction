@@ -7,8 +7,8 @@ execute if score @s pl_id2 matches 3 run summon trident ~ -70 ~ {NoGravity:1,Tag
 execute if score @s pl_id2 matches 4 run summon snowball ~ -70 ~ {NoGravity:1,Tags:["pl_entity_temp","pl_entity"]}
 execute if score @s pl_id2 matches 5 run summon egg ~ -70 ~ {NoGravity:1,Tags:["pl_entity_temp","pl_entity"]}
 execute if score @s pl_id2 matches 6 run summon ender_pearl ~ -70 ~ {NoGravity:1,Tags:["pl_entity_temp","pl_entity"]}
-execute if score @s pl_id2 matches 7 run summon experience_bottle ~ -70 ~ {NoGravity:1,Tags:["pl_entity_temp","pl_entity"]}
-execute if score @s pl_id2 matches 8 run summon potion ~ -70 ~ {NoGravity:1,Tags:["pl_entity_temp","pl_entity"]}
+execute if score @s pl_id2 matches 7 run summon potion ~ -70 ~ {NoGravity:1,Tags:["pl_entity_temp","pl_entity"]}
+execute if score @s pl_id2 matches 8 run summon experience_bottle ~ -70 ~ {NoGravity:1,Tags:["pl_entity_temp","pl_entity"]}
 
 execute if score @s pl_id2 matches 9 run summon item ~ -70 ~ {NoGravity:1,Tags:["pl_entity_temp","pl_entity"],Item:{id:"stick",Count:1b}}
 
@@ -33,7 +33,7 @@ execute as @e[tag=pl_entity_temp] store result score @s pl_id run data get entit
 
 #Save data on the marker
 execute as @e[tag=pl_entity_data_temp] run function p:events/entity/temp_data
-data modify entity @e[tag=pl_entity_data_temp,limit=1] data.Entity.Owner set from entity @s UUID
+execute unless score @s pl_id2 matches 9 run data modify entity @e[tag=pl_entity_data_temp,limit=1] data.Entity.Owner set from entity @s UUID
 tag @e remove pl_entity_temp
 tag @e remove pl_entity_data_temp
 

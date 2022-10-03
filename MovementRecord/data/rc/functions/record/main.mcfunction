@@ -1,3 +1,7 @@
+#Pause recording
+execute if score @s rc_click matches 1.. if data entity @s SelectedItem.tag.PauseRecording run function rc:record/pause
+execute if score @s rc_click matches 1.. if data entity @s SelectedItem.tag.ResumeRecording run function rc:record/resume
+
 bossbar set minecraft:recording name ["",{"text":"● ","color":"red"},{"text":"Recording..."},{"text":" | ","color":"gray"},{"text":"Frames: ","color":"gold"},{"score":{"name":"@s","objective":"rc_frames"},"color":"yellow"}]
 execute at @e[tag=rc_start_pos] run particle minecraft:portal ~ ~ ~ 0 0 0 0.1 10
 

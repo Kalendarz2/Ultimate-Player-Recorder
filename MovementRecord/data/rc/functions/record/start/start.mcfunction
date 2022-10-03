@@ -28,6 +28,7 @@ item replace entity @s hotbar.8 with carrot_on_a_stick{display:{Name:'{"text":"S
 
 #Give next/previous frame item
 execute if data storage minecraft:animation TempAnimation{Manual:1} run function rc:record/start/manual_frames
+execute if data storage minecraft:animation TempAnimation{Manual:0} run function rc:record/start/pause
 
 #Give event items
 execute if data storage minecraft:animation Event.Event1 run give @s carrot_on_a_stick{display:{Name:'{"text":"Event 1","color":"yellow","italic":false}'},Event:1,Event1:1,Carrot:1}

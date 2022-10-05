@@ -41,8 +41,8 @@ tellraw @a[scores={copy=..-1}] ["",{"text":"Id cannot be negative!","color":"dar
 execute as @a[scores={paste=1..}] run function rc:clipboard/paste
 tellraw @a[scores={paste=..-1}] ["",{"text":"Id cannot be negative!","color":"dark_red"}]
 
-#Record
-execute as @a[scores={record=1..},tag=!is_recording] run function rc:record/start/pre_start
+#Record unless entity @a[tag=is_recording] TEMP --------------------------------------------
+execute as @a[scores={record=1..},tag=!is_recording] unless entity @a[tag=is_recording] run function rc:record/start/pre_start
 execute as @a[tag=record_get] run function rc:record/start/settings/get
 execute as @a[tag=record_start] run function rc:record/main
 

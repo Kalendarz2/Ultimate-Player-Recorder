@@ -55,8 +55,8 @@ execute if score @s[tag=!cancel_ask,tag=!save_ask] rc_time matches 1 run functio
 execute if score @s edit matches 1 run function rc:editor/close/save_ask
 execute if score @s edit matches -1 run function rc:editor/close/no_save_ask
 execute if entity @s[tag=in_editor,tag=!cancel_ask] unless entity @e[tag=editor] run function rc:editor/close/no_save_ask
-execute unless data entity @s[tag=in_editor,tag=!cancel_ask] Inventory[{tag: {Edit_Name: 1}}] run function rc:editor/close/no_save_ask
-execute unless data entity @s[tag=in_editor,tag=!cancel_ask] Inventory[{tag: {Edit_Settings: 1}}] run function rc:editor/close/no_save_ask
+execute unless data entity @s[tag=in_editor,tag=!cancel_ask] Inventory[{tag:{Edit_Name: 1}}] run function rc:editor/close/no_save_ask
+execute unless data entity @s[tag=in_editor,tag=!cancel_ask] Inventory[{tag:{Edit_Settings: 1}}] run function rc:editor/close/no_save_ask
 
 execute if score @s[tag=cancel_ask] rc_time matches 1 run tellraw @s ["",{"text":"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAre you sure you want to exit without saving?","color":"yellow"},"\n",{"text":"Exit editor","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger edit set -3"}},{"text":" | ","color":"gold"},{"text":"Cancel","bold":true,"color":"green","clickEvent":{"action":"run_command","value":"/trigger edit set -2"}}]
 execute if score @s[tag=save_ask] rc_time matches 1 run tellraw @s ["",{"text":"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAre you sure you want to apply changes to the animation?","color":"yellow"},"\n",{"text":"Save","bold":true,"color":"green","clickEvent":{"action":"run_command","value":"/trigger edit set -4"}},{"text":" | ","color":"gold"},{"text":"Cancel","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger edit set -2"}}]
@@ -65,3 +65,4 @@ execute if score @s edit matches -4 run function rc:editor/close/save/save
 execute if score @s edit matches -3 run function rc:editor/close/close
 execute if score @s edit matches -2 run function rc:editor/close/cancel
 execute if score @s edit matches ..-1 run scoreboard players set @s edit 0
+execute if score @s rc_leave matches 1.. run function rc:editor/close/self

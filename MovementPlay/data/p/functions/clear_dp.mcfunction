@@ -1,3 +1,4 @@
+scoreboard objectives remove rc_leave
 scoreboard objectives remove rc_shift
 scoreboard objectives remove rc_click
 scoreboard objectives remove rc_frames

@@ -18,6 +18,7 @@ scoreboard players set @a[scores={menu=..-1}] menu 0
 
 #Editor
 execute as @a[scores={edit=1..},tag=!in_editor] run function rc:editor/start/start
+execute if entity @e[tag=editor] unless entity @a[tag=in_editor] run function rc:editor/close/close
 execute as @a[tag=in_editor] run function rc:editor/main
 
 clear @a[tag=!in_editor] minecraft:written_book{Edit_Settings:1}
@@ -59,6 +60,7 @@ execute as @a[tag=del_confirm] run function rc:delete/ask
 scoreboard players set $dp_check animation 0
 
 #Scores
+scoreboard players set @a rc_leave 0
 scoreboard players set @a rc_shift 0
 scoreboard players set @a rc_click 0
 scoreboard players set @a record 0

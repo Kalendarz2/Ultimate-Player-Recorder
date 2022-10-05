@@ -15,6 +15,7 @@ scoreboard objectives add settings trigger
 scoreboard objectives add animation dummy
 scoreboard objectives add score dummy
 
+scoreboard objectives add rc_leave minecraft.custom:minecraft.leave_game
 scoreboard objectives add rc_shift minecraft.custom:minecraft.sneak_time
 scoreboard objectives add rc_click minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add rc_frames dummy

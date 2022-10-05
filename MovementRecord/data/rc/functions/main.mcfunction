@@ -24,7 +24,6 @@ clear @a[tag=!in_editor] minecraft:written_book{Edit_Settings:1}
 clear @a[tag=!in_editor] minecraft:writable_book{Edit_Name:1}
 tellraw @a[scores={edit=..-1}] ["",{"text":"Id cannot be negative!","color":"dark_red"}]
 
-
 #Get Item
 execute as @a[scores={item=1..}] run function rc:item/item
 tellraw @a[scores={item=..-1}] ["",{"text":"Id cannot be negative!","color":"dark_red"}]

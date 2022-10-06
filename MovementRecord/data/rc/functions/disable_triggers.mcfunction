@@ -1,4 +1,5 @@
 scoreboard players reset @s menu
+scoreboard players reset @s api
 scoreboard players reset @s record
 scoreboard players reset @s delete
 scoreboard players reset @s copy

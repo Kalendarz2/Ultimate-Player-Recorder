@@ -1,10 +1,14 @@
+#Kill
+scoreboard players operation $slot_id rc_id = @s rc_id
+execute as @e[tag=record_wait_move] if score @s rc_id = $slot_id rc_id run kill @s
+execute as @e[tag=rc_minecart_group] if score @s rc_id = $slot_id rc_id run kill @s
+
 #Start
-kill @e[tag=record_wait_move]
 scoreboard players set @s rc_frames 0
 tag @s remove record_get
 tag @s remove rc_wait
 tag @s add record_start
-execute store result score $rc_tick rc_id run data get storage minecraft:animation TempAnimation.Frequency
+execute store result score @e[tag=this_rc_data,limit=1] rc_frames run data get storage minecraft:animation TempAnimation.Frequency
 
 #Book
 execute if data storage minecraft:animation {Bukkit:0} run data modify storage minecraft:animation TempAnimation.Name set from entity @s Inventory[{id:"minecraft:written_book",tag:{Name:1}}].tag.title
@@ -12,12 +16,11 @@ execute if data storage minecraft:animation {Bukkit:1} run data modify storage m
 clear @s minecraft:written_book{Name:1}
 clear @s minecraft:written_book{Settings:1}
 execute if data storage minecraft:animation {Bukkit:1} run clear @s minecraft:written_book
-kill @e[tag=rc_minecart_group]
 
 #Spawn block markers
 execute if data storage minecraft:animation TempAnimation{Placed:1} run tag @s add spawn_blocks
 execute if data storage minecraft:animation TempAnimation{Broken:1} run tag @s add spawn_blocks
-execute if entity @s[tag=spawn_blocks] run function rc:record/blocks/spawn
+execute if entity @s[tag=spawn_blocks] run function rc:record/blocks/init
 
 #Give stop item
 execute if data entity @s Inventory[{Slot:8b}] at @s run summon minecraft:item ~ ~ ~ {PickupDelay:0,Item:{id:"minecraft:stick",Count:1},Tags:["replace_item"]}

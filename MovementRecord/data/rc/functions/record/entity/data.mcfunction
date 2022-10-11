@@ -1,4 +1,4 @@
-playsound minecraft:entity.experience_orb.pickup master @a
+playsound minecraft:entity.experience_orb.pickup master @p
 
 #Set nbt
 data remove storage minecraft:animation TempFrame.TempEntity
@@ -47,4 +47,4 @@ execute if entity @s[type=firework_rocket] run data modify storage minecraft:ani
 execute if entity @s[type=item_frame] run data modify storage minecraft:animation TempFrame.TempEntity.Type set value 23
 
 
-data modify storage minecraft:animation TempFrame.Entity append from storage minecraft:animation TempFrame.TempEntity
+data modify entity @e[tag=this_rc_data,limit=1] data.Entity append from storage minecraft:animation TempFrame.TempEntity

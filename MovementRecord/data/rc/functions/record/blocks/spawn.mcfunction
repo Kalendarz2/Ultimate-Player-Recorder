@@ -1,13 +1,8 @@
 #Spawn
-kill @e[tag=rc_block]
-kill @e[tag=rc_block_main]
-execute at @s run summon minecraft:marker ~ ~ ~ {Tags:["rc_block_main"]}
 summon minecraft:marker 12587344 10 12587360 {Tags:["rc_block"]}
 
-fill 12587343 10 12587359 12587355 32 12587371 air
-execute at @s align xyz run clone ~-5 ~-4 ~-5 ~5 ~6 ~5 12587344 22 12587360
+fill 12587343 10 12587359 12587355 20 12587371 air
 fill 12587344 9 12587360 12587354 9 12587370 bedrock
-fill 12587344 21 12587360 12587354 21 12587370 bedrock
 
 #Copy
 execute at @e[tag=rc_block] run summon minecraft:marker ~ ~ ~1 {Tags:["rc_block"]}

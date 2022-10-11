@@ -1,0 +1,10 @@
+execute if score @s rc_id matches 1 as @e[tag=rc_block] at @s if block ~ ~ ~ air unless block ~ ~12 ~ air run function rc:record/blocks/break
+execute if score @s rc_id matches 2 as @e[tag=rc_block] at @s if block ~ ~ ~ air unless block ~ ~24 ~ air run function rc:record/blocks/break
+execute if score @s rc_id matches 3 as @e[tag=rc_block] at @s if block ~ ~ ~ air unless block ~ ~36 ~ air run function rc:record/blocks/break
+execute if score @s rc_id matches 4 as @e[tag=rc_block] at @s if block ~ ~ ~ air unless block ~ ~48 ~ air run function rc:record/blocks/break
+execute if score @s rc_id matches 5 as @e[tag=rc_block] at @s if block ~ ~ ~ air unless block ~ ~60 ~ air run function rc:record/blocks/break
+execute if score @s rc_id matches 6 as @e[tag=rc_block] at @s if block ~ ~ ~ air unless block ~ ~72 ~ air run function rc:record/blocks/break
+execute if score @s rc_id matches 7 as @e[tag=rc_block] at @s if block ~ ~ ~ air unless block ~ ~84 ~ air run function rc:record/blocks/break
+execute if score @s rc_id matches 8 as @e[tag=rc_block] at @s if block ~ ~ ~ air unless block ~ ~96 ~ air run function rc:record/blocks/break
+execute if score @s rc_id matches 9 as @e[tag=rc_block] at @s if block ~ ~ ~ air unless block ~ ~108 ~ air run function rc:record/blocks/break
+execute if score @s rc_id matches 10 as @e[tag=rc_block] at @s if block ~ ~ ~ air unless block ~ ~120 ~ air run function rc:record/blocks/break

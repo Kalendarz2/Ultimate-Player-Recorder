@@ -1,0 +1,10 @@
+execute unless entity @e[tag=is_recording,scores={rc_id=10}] run scoreboard players set @s rc_id 10
+execute unless entity @e[tag=is_recording,scores={rc_id=9}] run scoreboard players set @s rc_id 9
+execute unless entity @e[tag=is_recording,scores={rc_id=8}] run scoreboard players set @s rc_id 8
+execute unless entity @e[tag=is_recording,scores={rc_id=7}] run scoreboard players set @s rc_id 7
+execute unless entity @e[tag=is_recording,scores={rc_id=6}] run scoreboard players set @s rc_id 6
+execute unless entity @e[tag=is_recording,scores={rc_id=5}] run scoreboard players set @s rc_id 5
+execute unless entity @e[tag=is_recording,scores={rc_id=4}] run scoreboard players set @s rc_id 4
+execute unless entity @e[tag=is_recording,scores={rc_id=3}] run scoreboard players set @s rc_id 3
+execute unless entity @e[tag=is_recording,scores={rc_id=2}] run scoreboard players set @s rc_id 2
+execute unless entity @e[tag=is_recording,scores={rc_id=1}] run scoreboard players set @s rc_id 1

@@ -9,9 +9,10 @@ scoreboard players operation @e[tag=this_rc_data] rc_menu = $id rc_id
 tag @s remove this_load_id
 
 #Setup
-data modify entity @e[tag=this_rc_data,limit=1] data.Info set from storage minecraft:animation DefaultSettings
-data modify entity @e[tag=this_rc_data,limit=1] data.Info merge from storage minecraft:animation APIAnimation
-execute store result entity @e[tag=this_rc_data,limit=1] data.Info.id int 1 run scoreboard players get $id rc_id
+data modify storage minecraft:animation TempAnimation set from storage minecraft:animation DefaultSettings
+data modify storage minecraft:animation TempAnimation merge from storage minecraft:animation RecordAPI
+execute store result storage minecraft:animation TempAnimation.id int 1 run scoreboard players get $id rc_id
+data modify entity @e[tag=this_rc_data,limit=1] data.Info set from storage minecraft:animation TempAnimation
 
 #Prepare chunks
 forceload add 12587359 12587360

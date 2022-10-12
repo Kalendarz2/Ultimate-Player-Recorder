@@ -27,6 +27,7 @@ execute as @e[tag=anim_from_item] at @s run function p:active
 tag @e[tag=p_place_marker] add tick
 kill @e[tag=animation_holder,tag=kill_a]
 execute unless entity @e[tag=pl_entity] run kill @e[tag=pl_entity_data]
+kill @e[tag=p_place_main_marker]
 
 #Datapack compatibility
 scoreboard players remove $dp_check animation 1

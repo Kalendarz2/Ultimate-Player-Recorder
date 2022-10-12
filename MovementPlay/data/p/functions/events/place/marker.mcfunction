@@ -1,20 +1,20 @@
-#Save data
-data modify entity @s data.Pos set from storage minecraft:play TempFrame.Placed[0].Pos
-data modify entity @s data.BlockState.Name set from storage minecraft:play TempFrame.Placed[0].Name
-data modify entity @s data.BlockState.Properties set from storage minecraft:play TempFrame.Placed[0].Properties
-data modify entity @s data.TileEntityData set from storage minecraft:play TempFrame.Placed[0].TileEntityData
-data modify entity @s data.Relative set from storage minecraft:play Info.Relative
+#Clear blocks
+setblock ~ ~-1 ~ bedrock
+setblock ~1 ~ ~ barrier
+setblock ~ ~ ~1 barrier
+setblock ~-1 ~ ~ barrier
+setblock ~ ~ ~-1 barrier
+setblock ~ ~ ~ air
 
-#Save relative pos
-data modify entity @s data.RelativePos set value [0,0,0]
-execute store result entity @s data.RelativePos[0] int 1 run scoreboard players get @e[tag=this_a,tag=frames,limit=1] pl_pos_x
-execute store result entity @s data.RelativePos[1] int 1 run scoreboard players get @e[tag=this_a,tag=frames,limit=1] pl_pos_y
-execute store result entity @s data.RelativePos[2] int 1 run scoreboard players get @e[tag=this_a,tag=frames,limit=1] pl_pos_z
+#Summon block
+summon minecraft:falling_block ~ ~ ~ {Time:1,Tags:["p_place","this_c"]}
+execute as @e[tag=this_c] at @s run function p:events/place/block_data
 
-#Block id (looking for a free spot)
-execute unless data entity @s data.U run function p:events/place/id
+#Summon marker with data
+summon marker ~ ~ ~ {Tags:["p_place_marker","this_d"]}
+execute as @e[tag=this_d] run function p:events/place/marker_data
 
-#Save id
-scoreboard players operation @s pl_id2 = @e[tag=this_a,tag=frames,limit=1] pl_id
-
-tag @s remove this_d
+#Change pos
+tp @s ~ ~ ~2
+scoreboard players add @s pl_pos_z 1
+execute if score @s pl_pos_z matches 7.. run function p:events/place/move

@@ -18,7 +18,7 @@ execute unless entity @s[tag=anim_from_item] unless data entity @e[tag=this_a,ta
 execute store result score @s speed run data get entity @e[tag=this_a,tag=info,limit=1] data.Info.Speed
 
 #Prepare chunks
-forceload add 12587360 12587360 12587440 12587360
+forceload add 12587360 12587360
 fill 12587360 0 12587360 12587360 1 12587360 air
 setblock 12587360 0 12587360 bedrock
 setblock 12587361 1 12587360 barrier

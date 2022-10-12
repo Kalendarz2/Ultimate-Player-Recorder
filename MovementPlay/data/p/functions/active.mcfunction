@@ -21,4 +21,4 @@ execute if entity @s[tag=!stop,scores={pl_frequency=-1..}] run function p:read
 execute unless score @s animation = @s pl_animation run tag @s add change_anim
 execute unless score @s animation = @s pl_animation run function p:end
 
-tag @e remove this_a
+tag @e[tag=this_a] remove this_a

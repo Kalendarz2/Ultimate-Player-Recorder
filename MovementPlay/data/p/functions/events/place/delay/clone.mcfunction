@@ -14,7 +14,6 @@ execute at @s unless block ~ ~ ~ #p:air run function p:events/place/delay/block_
 
 #Playsound
 execute at @s if block ~ ~ ~ #p:air run function p:events/place/delay/sound
-playsound minecraft:block.stone.place block @a
 
 #Clone block to destination
 execute at @s run clone 12587360 1 12587360 12587360 1 12587360 ~ ~ ~

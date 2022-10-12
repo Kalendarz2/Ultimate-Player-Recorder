@@ -9,7 +9,6 @@ execute if score @s rc_click matches 1.. if data entity @s SelectedItem.tag.Paus
 execute if score @s rc_click matches 1.. if data entity @s SelectedItem.tag.ResumeRecording run function rc:record/resume
 
 bossbar set minecraft:recording name ["",{"text":"● ","color":"red"},{"text":"Recording..."},{"text":" | ","color":"gray"},{"text":"Frames: ","color":"gold"},{"score":{"name":"@s","objective":"rc_frames"},"color":"yellow"}]
-execute unless data storage minecraft:animation {APIMode:1} at @e[tag=rc_start_pos] run particle minecraft:portal ~ ~ ~ 0 0 0 0.1 10
 
 #Display blocks
 execute if entity @s[tag=spawn_blocks] if data storage minecraft:animation TempAnimation{Manual:1} as @e[tag=rc_block_main] if score @s rc_id = $slot_id rc_id at @s align xyz run function rc:record/blocks/display

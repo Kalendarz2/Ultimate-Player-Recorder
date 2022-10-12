@@ -6,10 +6,12 @@ tag @e[tag=rc_data] add rc_kill
 execute as @e[scores={record=1..},tag=!is_recording] run function rc:record/start/pre_start
 execute as @a[tag=record_get] run function rc:record/start/settings/get
 execute as @e[tag=record_start] run function rc:record/main
-kill @e[tag=rc_place_blocks]
-
 clear @a[tag=!record_get] minecraft:written_book{Settings:1}
 clear @a[tag=!record_get] minecraft:writable_book{Name:1}
+
+#Recording async
+execute unless data storage minecraft:animation {APIMode:1} at @e[tag=rc_start_pos] run particle minecraft:portal ~ ~ ~ 0 0 0 0.1 10
+kill @e[tag=rc_place_blocks]
 
 #Cancel
 execute as @e[tag=rc_data,tag=rc_kill] run function rc:record/stop

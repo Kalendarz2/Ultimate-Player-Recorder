@@ -2,7 +2,7 @@ data modify storage minecraft:animation TempBlock.Temp set value {Name:"",Pos:[0
 
 data modify storage minecraft:animation TempBlock.Temp.Name set from entity @s inBlockState.Name
 data modify storage minecraft:animation TempBlock.Temp.Properties set from entity @s inBlockState.Properties
-data modify storage minecraft:animation TempBlock.Temp.TileEntityData set from block ~ ~-0.1 ~
+execute at @s run data modify storage minecraft:animation TempBlock.Temp.TileEntityData set from block ~ ~-0.1 ~
 execute store result storage minecraft:animation TempBlock.Temp.Pos[0] int 1 run scoreboard players get @s rc_pos_x
 execute store result storage minecraft:animation TempBlock.Temp.Pos[1] int 1 run scoreboard players get @s rc_pos_y
 execute store result storage minecraft:animation TempBlock.Temp.Pos[2] int 1 run scoreboard players get @s rc_pos_z

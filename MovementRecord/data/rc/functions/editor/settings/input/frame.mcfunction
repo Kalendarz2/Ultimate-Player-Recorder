@@ -36,7 +36,7 @@ tag @e[tag=selected_frame] add selected_frames
 execute as @e[tag=has_block,tag=!selected_frames] run function rc:editor/frames/block/save/placed_main
 execute as @e[tag=remove_block,tag=!selected_frames] run function rc:editor/frames/block/save/destroyed_main
 tag @e[tag=frame,tag=!selected_frames] remove has_block
-tag @e[tag=frame,tag=!selected_frames] remove remove_entity
+tag @e[tag=frame,tag=!selected_frames] remove remove_block
 
 #Summon blocks
 execute as @e[tag=selected_frames,tag=!has_block] if data entity @s data.Frame.Placed[0] run function rc:editor/frames/block/spawn/placed/placed

@@ -19,7 +19,7 @@ scoreboard players set $100 rc_id 100
 scoreboard players set $1000 rc_id 1000
 
 #Check for Bukkit
-forceload add 12587359 12587360 12587359 12587360
+forceload add 12587359 12587360
 fill 12587358 9 12587360 12587358 10 12587360 air
 setblock 12587358 9 12587360 bedrock
 summon arrow 12587358 10 12587360 {Motion:[0.0,-10.0,0.0],Tags:["rc_bukkit_check"]}

@@ -14,7 +14,7 @@ data modify entity @e[tag=this_rc_data,limit=1] data.Info merge from storage min
 execute store result entity @e[tag=this_rc_data,limit=1] data.Info.id int 1 run scoreboard players get $id rc_id
 
 #Prepare chunks
-forceload add 12587359 12587360 12587279 12587360
+forceload add 12587359 12587360
 fill 12587359 0 12587360 12587359 1 12587360 air
 setblock 12587358 0 12587360 bedrock
 setblock 12587359 1 12587360 barrier

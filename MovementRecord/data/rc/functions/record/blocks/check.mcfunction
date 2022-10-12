@@ -10,8 +10,8 @@ execute store result score @s rc_pos_z run data get entity @e[tag=this_rc_block_
 
 #Compare
 tag @s add this
-#execute if data storage minecraft:animation TempAnimation{Broken:1} run function rc:record/storage_slot/blocks/compare_break
-#execute if data storage minecraft:animation TempAnimation{Placed:1} run function rc:record/storage_slot/blocks/compare_place
+execute if data storage minecraft:animation TempAnimation{Broken:1} run function rc:record/storage_slot/blocks/compare_break
+execute if data storage minecraft:animation TempAnimation{Placed:1} run function rc:record/storage_slot/blocks/compare_place
 execute as @e[tag=rc_button] if score @s rc_id = $slot_id rc_id at @s if block ~ ~ ~ #minecraft:buttons[powered=false] run function rc:record/blocks/place/place
 execute as @e[tag=rc_button] if score @s rc_id = $slot_id rc_id at @s unless block ~ ~ ~ #minecraft:buttons run kill @s
 

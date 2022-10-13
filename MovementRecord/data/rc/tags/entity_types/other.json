@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "minecraft:player",
+    "minecraft:marker",
     "minecraft:area_effect_cloud",
     "minecraft:falling_block",
     "minecraft:dragon_fireball",

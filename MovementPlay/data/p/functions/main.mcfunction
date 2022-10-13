@@ -20,7 +20,7 @@ scoreboard players set @e[tag=p_part] animation 0
 
 #Start from item
 scoreboard players add @e animation 0
-execute at @e[type=item,nbt={Item:{tag:{Animation:{}}}}] run tag @e[scores={animation=..0},type=!#p:other,limit=1,sort=nearest,distance=..1,tag=!p_part,tag=!animation_holder,tag=!editor] add anim_from_item
+execute at @e[type=item,nbt={Item:{tag:{Animation:{}}}}] run tag @e[scores={animation=..0},type=!#p:other,limit=1,sort=nearest,distance=0.01..1,tag=!p_part,tag=!animation_holder,tag=!editor] add anim_from_item
 execute as @e[tag=anim_from_item] at @s run function p:active
 
 #Kill

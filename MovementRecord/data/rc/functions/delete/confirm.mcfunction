@@ -1,7 +1,7 @@
-execute store result score $id rc_id run data get storage minecraft:animation DelAnimation.id
+execute unless score $temp rc_id matches 1 store result score $id rc_id run data get storage minecraft:animation DelAnimation.id
 
 #Reset
-function rc:delete/cancel
+execute unless score $temp rc_id matches 1 run function rc:delete/cancel
 
 #Recreate main array
 data modify storage minecraft:animation DelAnimation set from storage minecraft:animation Animation

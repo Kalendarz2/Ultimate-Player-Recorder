@@ -17,6 +17,7 @@ scoreboard players set $98 rc_id 98
 scoreboard players set $99 rc_id 99
 scoreboard players set $100 rc_id 100
 scoreboard players set $1000 rc_id 1000
+scoreboard players set $2000 rc_id 2000
 
 #Check for Bukkit
 forceload add 12587359 12587360

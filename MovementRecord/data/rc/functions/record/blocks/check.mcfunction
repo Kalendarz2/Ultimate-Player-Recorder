@@ -2,6 +2,7 @@
 scoreboard players operation $slot_id rc_id = @s rc_id
 execute as @e[tag=rc_block_main] if score @s rc_id = $slot_id rc_id run tag @s add this_rc_block_main
 execute at @e[tag=this_rc_block_main] align xyz run clone ~-5 ~-4 ~-5 ~5 ~6 ~5 12587344 10 12587360
+execute positioned 12587344 10 12587360 run kill @e[type=item,distance=..200]
 
 #Get marker position
 execute store result score @s rc_pos_x run data get entity @e[tag=this_rc_block_main,limit=1] Pos[0] 1

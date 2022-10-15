@@ -2,6 +2,9 @@ execute if data storage minecraft:animation TempAnimation{Manual:1} at @s run pl
 scoreboard players add @s rc_frames 1
 execute if score @s rc_frames matches 1 at @s run tag @e[tag=rc_data] add rc_start_pos
 execute if score @s rc_frames matches 1 run tp @e[tag=this_rc_data] @s
+scoreboard players operation $2000 rc_frames = @s rc_frames
+scoreboard players operation $2000 rc_frames %= $2000 rc_id
+execute if score $2000 rc_frames matches 0 run tellraw @a[tag=rc_debug] ["",{"text":"<RC Debug> ","color":"dark_green","bold":true},{"selector":"@s","color":"yellow"},{"text":" surpassed ","color":"yellow"},{"score":{"name":"@s","objective":"rc_frames"},"color":"yellow"},{"text":" frames. Are you sure this animation should be so long?","color":"yellow"}]
 
 #Overwrite storage
 data modify storage minecraft:animation TempFrame set value {Pos:[0.0,0.0,0.0],Rot:[0.0f,0.0f],Item:{},Event:[],TempEvent:{},Shift:0,Placed:[],Broken:[],TempBlock:[0,0,0],Entity:[]}

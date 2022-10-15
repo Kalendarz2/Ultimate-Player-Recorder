@@ -1,0 +1,4 @@
+function rc:record/cancel
+scoreboard players set @s[tag=menu_open] rc_time 120
+execute unless data storage minecraft:animation {APIMode:1} run tellraw @s ["",{"text":"Id ","color":"dark_red"},{"score":{"name":"@s","objective":"record"},"color":"dark_red"},{"text":" is already in use! Execute this command without any arguments, to generate id automaticly.","color":"dark_red"}]
+tellraw @a[tag=rc_debug] ["",{"text":"<RC Debug> ","color":"dark_green","bold":true},{"text":"Id ","color":"dark_red"},{"score":{"name":"@s","objective":"record"},"color":"dark_red"},{"text":" is already in use! Remove it first by using /scoreboard players set $id rc_id ","color":"dark_red"},{"score":{"name":"@s","objective":"record"},"color":"dark_red"},{"text":" and /function rc:api/delete","color":"dark_red"}]

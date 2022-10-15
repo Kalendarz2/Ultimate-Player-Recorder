@@ -20,8 +20,5 @@ function rc:record/cancel
 scoreboard players set @s[tag=menu_open] rc_time 150
 
 #Message
-execute unless data storage minecraft:animation TempAnimation{Length:0} at @s run playsound minecraft:entity.player.levelup master @s
-execute unless data storage minecraft:animation TempAnimation{Length:0} run tellraw @s {"text":"Animation saved successfully!","color":"green"}
-
-execute if data storage minecraft:animation TempAnimation{Length:0} at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 0.5 1
-execute if data storage minecraft:animation TempAnimation{Length:0} run tellraw @s {"text":"Animation did not contain any frames and was not saved.","color":"red"}
+tellraw @a[tag=rc_debug] ["",{"text":"<RC Debug> ","color":"dark_green","bold":true},{"selector":"@s","color":"gray"},{"text":" recorded an animation ","color":"gray"},{"nbt":"TempAnimation.Name","storage":"minecraft:animation"},{"text":" with id ","color":"gray"},{"nbt":"TempAnimation.id","storage":"minecraft:animation"}]
+execute unless data storage minecraft:animation {APIMode:1} run function rc:record/stop_message

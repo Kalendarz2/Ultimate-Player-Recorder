@@ -16,7 +16,7 @@ execute if data storage minecraft:animation TempAnimation{Broken:1} run tag @s a
 execute if entity @s[tag=spawn_blocks] run function rc:record/blocks/init
 
 #Items
-execute unless data storage minecraft:animation {APIMode:1} if entity @s[type=player] run function rc:record/start/items
+execute unless data storage minecraft:animation {APIMode:1} if entity @s[type=player,tag=!start_from_api] run function rc:record/start/items
 
 #Message
 tellraw @a[tag=rc_debug] ["",{"text":"<RC Debug> ","color":"dark_green","bold":true},{"selector":"@s","color":"gray"},{"text":" started recording with id ","color":"gray"},{"nbt":"TempAnimation.id","storage":"minecraft:animation"}]

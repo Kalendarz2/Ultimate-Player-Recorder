@@ -21,4 +21,5 @@ scoreboard players set @s[tag=menu_open] rc_time 150
 
 #Message
 tellraw @a[tag=rc_debug] ["",{"text":"<RC Debug> ","color":"dark_green","bold":true},{"selector":"@s","color":"gray"},{"text":" recorded an animation ","color":"gray"},{"nbt":"TempAnimation.Name","storage":"minecraft:animation"},{"text":" with id ","color":"gray"},{"nbt":"TempAnimation.id","storage":"minecraft:animation"}]
-execute unless data storage minecraft:animation {APIMode:1} run function rc:record/stop_message
+execute unless data storage minecraft:animation {APIMode:1} unless entity @s[tag=start_from_api] run function rc:record/stop_message
+tag @s remove start_from_api

@@ -9,6 +9,10 @@ execute store result score @s rc_pos_x run data get entity @e[tag=this_rc_block_
 execute store result score @s rc_pos_y run data get entity @e[tag=this_rc_block_main,limit=1] Pos[1] 1
 execute store result score @s rc_pos_z run data get entity @e[tag=this_rc_block_main,limit=1] Pos[2] 1
 
+#Hide
+execute if data storage minecraft:animation {APIMode:1} run tag @s add rc_sound
+execute if data storage minecraft:animation {APIMode:1} run tag @s add rc_sound2
+
 #Compare
 tag @s add this
 execute if data storage minecraft:animation TempAnimation{Broken:1} run function rc:record/storage_slot/blocks/compare_break

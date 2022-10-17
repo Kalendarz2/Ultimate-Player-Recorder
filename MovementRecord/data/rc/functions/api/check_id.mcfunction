@@ -1,4 +1,2 @@
 function rc:id/check/check
-execute unless score $id rc_id matches 1.. run tellraw @a[tag=rc_debug] ["",{"text":"<RC Debug> ","color":"dark_green","bold":true},{"text":"ID must be a positive number.","color":"dark_red"}]
-execute if score $id rc_id matches 1.. if score $id_out rc_id matches 1 run tellraw @a[tag=rc_debug] ["",{"text":"<RC Debug> ","color":"dark_green","bold":true},{"text":"Id ","color":"gray"},{"score":{"name":"$id","objective":"rc_id"}},{"text":" is occupied.","color":"gray"}]
-execute if score $id rc_id matches 1.. if score $id_out rc_id matches 0 run tellraw @a[tag=rc_debug] ["",{"text":"<RC Debug> ","color":"dark_green","bold":true},{"text":"Id ","color":"gray"},{"score":{"name":"$id","objective":"rc_id"}},{"text":" is free.","color":"gray"}]
+function rc:internal_api/check_id

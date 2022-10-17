@@ -1,0 +1,4 @@
+#Check id shared part
+execute unless score $id rc_id matches 1.. run function rc:internal_api/messages/positive_id
+execute if score $id rc_id matches 1.. if score $id_out rc_id matches 1 run tellraw @a[tag=rc_debug] ["",{"text":"<RC Debug> ","color":"dark_green","bold":true},{"text":"Id ","color":"gray"},{"score":{"name":"$id","objective":"rc_id"}},{"text":" is occupied.","color":"gray"}]
+execute if score $id rc_id matches 1.. if score $id_out rc_id matches 0 run tellraw @a[tag=rc_debug] ["",{"text":"<RC Debug> ","color":"dark_green","bold":true},{"text":"Id ","color":"gray"},{"score":{"name":"$id","objective":"rc_id"}},{"text":" is free.","color":"gray"}]

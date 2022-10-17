@@ -7,3 +7,4 @@ execute unless score $id rc_id matches 1 if score $id_out rc_id matches 1 run te
 execute if score $id rc_id matches 1 run function rc:id/check/all
 
 execute if score $id_out rc_id matches 0 run function rc:clipboard/success
+execute if score $id_out rc_id matches 0 run tellraw @s ["",{"text":"Animation ","color":"yellow"},{"nbt":"Clipboard.Name","storage":"minecraft:animation","bold":true,"color":"aqua"},{"text":" has been successfully pasted with id ","color":"yellow"},{"nbt":"Clipboard.id","storage":"minecraft:animation","bold":false,"color":"white"}]

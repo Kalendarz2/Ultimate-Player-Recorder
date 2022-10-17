@@ -1,0 +1,1 @@
+tellraw @a[tag=rc_debug] ["",{"text":"<RC Debug> ","color":"dark_green","bold":true},{"text":"ID must be a positive number.","color":"dark_red"}]

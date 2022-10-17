@@ -1,4 +1,4 @@
-playsound minecraft:entity.experience_orb.pickup master @p
+execute unless data storage minecraft:animation {APIMode:1} run playsound minecraft:entity.experience_orb.pickup master @p
 
 #Set nbt
 data remove storage minecraft:animation TempFrame.TempEntity

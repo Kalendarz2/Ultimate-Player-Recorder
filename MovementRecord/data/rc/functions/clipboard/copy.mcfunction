@@ -7,3 +7,5 @@ execute if score $id_out rc_id matches 0 run tellraw @s ["",{"text":"There is no
 
 #Id
 execute if score $id_out rc_id matches 1 run function rc:clipboard/save
+execute if score $id_out rc_id matches 1 run tellraw @s ["",{"text":"Animation ","color":"yellow"},{"nbt":"GetAnimation.Name","storage":"minecraft:animation","bold":true,"color":"aqua"},{"text":" has been saved to the clipboard.","color":"yellow"}]
+execute if score $id_out rc_id matches 1 run data remove storage minecraft:animation GetAnimation

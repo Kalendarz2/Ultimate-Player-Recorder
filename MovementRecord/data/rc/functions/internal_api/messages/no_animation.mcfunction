@@ -1,0 +1,1 @@
+tellraw @a[tag=rc_debug] ["",{"text":"<RC Debug> ","color":"dark_green","bold":true},{"text":"There is no animation with id ","color":"dark_red"},{"score":{"name":"$id","objective":"rc_id"},"color":"dark_red"}]

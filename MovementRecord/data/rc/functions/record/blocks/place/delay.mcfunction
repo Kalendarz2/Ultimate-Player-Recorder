@@ -8,6 +8,7 @@ execute store result storage minecraft:animation TempBlock.Temp.Pos[1] int 1 run
 execute store result storage minecraft:animation TempBlock.Temp.Pos[2] int 1 run scoreboard players get @s rc_pos_z
 
 execute if data entity @s inBlockState{Name:"minecraft:bedrock"} at @s if entity @s[y=0.1,dy=0] run function rc:record/blocks/place/other
+execute if entity @s[tag=rc_block_check_button] at @s run function rc:record/blocks/place/other
 
 data modify storage minecraft:animation TempBlock.Array append from storage minecraft:animation TempBlock.Temp
 kill @s

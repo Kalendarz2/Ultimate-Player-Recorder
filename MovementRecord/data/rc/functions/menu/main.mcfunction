@@ -1,6 +1,6 @@
 #Save gamerule
-execute if entity @s[tag=!menu_open] store result score $feedback rc_time run gamerule sendCommandFeedback
-gamerule sendCommandFeedback false
+execute unless entity @a[tag=menu_open] unless entity @a[tag=in_editor] store result score $feedback rc_time run gamerule sendCommandFeedback
+execute unless entity @a[tag=menu_open] unless entity @a[tag=in_editor] run gamerule sendCommandFeedback false
 
 #Open sound
 execute at @s[tag=!menu_open] run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1

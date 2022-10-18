@@ -1,7 +1,7 @@
 #Datapack modules
 execute unless data storage minecraft:animation {APIMode:1} run function rc:modules
 
-#Record unless entity @e[tag=is_recording] TEMP --------------------------------------------
+#Record
 tag @e[tag=rc_data] add rc_kill
 execute as @e[type=!#rc:other,scores={record=1..},tag=!is_recording] run function rc:record/start/pre_start
 execute as @a[tag=record_get] run function rc:record/start/settings/get

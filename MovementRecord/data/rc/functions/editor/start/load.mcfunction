@@ -17,6 +17,10 @@ loot give @s loot rc:get_book
 #Prepare chunk
 forceload add 12587359 12587360
 
+#Save gamerule
+execute unless entity @a[tag=menu_open] unless entity @a[tag=in_editor] store result score $feedback rc_time run gamerule sendCommandFeedback
+execute unless entity @a[tag=menu_open] unless entity @a[tag=in_editor] run gamerule sendCommandFeedback false
+
 #In editor
 scoreboard players operation $editor rc_id = @s edit
 tellraw @s {"text":"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n","color":"yellow"}
@@ -53,10 +57,6 @@ execute as @e[tag=selected_frame] if data entity @s data.Frame.Broken[0] run fun
 
 #Summon entities
 execute as @e[tag=selected_frame] if data entity @s data.Frame.Entity[0] run function rc:editor/frames/entity/spawn/load
-
-#Save gamerule
-execute if entity @s[tag=!menu_open] store result score $feedback rc_time run gamerule sendCommandFeedback
-gamerule sendCommandFeedback false
 
 #Menu
 execute at @s run playsound minecraft:block.note_block.xylophone master @s ~ ~ ~ 1 1

@@ -50,4 +50,6 @@ tag @e[tag=frame,tag=!selected_frames] remove has_entity
 execute as @e[tag=selected_frames,tag=!has_entity] if data entity @s data.Frame.Entity[0] run function rc:editor/frames/entity/spawn/load
 
 #Frame count limit
-execute if score @s edit matches ..7 if score $editor rc_frames matches 1000.. run function rc:editor/frames/manage
+execute if data storage minecraft:animation Edit.BackArray[0] run tag @s add frame_limit_c
+execute if data storage minecraft:animation Edit.FrontArray[0] run tag @s add frame_limit_c
+execute if score @s[tag=frame_limit_c] edit matches ..7 run function rc:editor/frames/manage

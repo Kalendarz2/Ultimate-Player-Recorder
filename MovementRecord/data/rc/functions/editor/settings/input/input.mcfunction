@@ -11,6 +11,9 @@ execute if score @s edit matches 17 if entity @e[tag=frame_selection_start] if e
 execute if score @s edit matches 18 run scoreboard players set $editor rc_shift 1
 execute if score @s edit matches 19 run scoreboard players set $editor rc_shift 0
 
+#Import animation
+execute if score @s edit matches 150..199 run function rc:editor/settings/input/import
+
 #Bossbar
 execute store result bossbar minecraft:editor value run scoreboard players get $frame_edit rc_id
 bossbar set minecraft:editor name ["",{"text":"Frame: ","color":"gold"},{"score":{"name":"$frame_edit","objective":"rc_id"},"color":"yellow"},{"text":"/","color":"yellow"},{"score":{"name":"$editor","objective":"rc_frames"},"color":"yellow"}]
@@ -28,6 +31,8 @@ execute if score @s edit matches 104 run scoreboard players set $editor rc_menu 
 execute if score @s edit matches 105 run scoreboard players set $editor rc_menu 5
 execute if score @s edit matches 106 run scoreboard players set $editor rc_menu 6
 execute if score @s edit matches 107 run scoreboard players set $editor rc_menu 7
+execute if score @s edit matches 108 run scoreboard players set $editor_import rc_menu 0
+execute if score @s edit matches 108 run scoreboard players set $editor rc_menu 8
 
 #Move frames
 execute if score @s edit matches 20..41 run function rc:editor/settings/input/move

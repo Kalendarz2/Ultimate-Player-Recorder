@@ -1,3 +1,4 @@
+tag @s remove frame_limit_c
 tag @e[tag=selected_frame] add frame_limit
 tag @e[tag=frame_selection_start] add frame_limit
 tag @e[tag=frame_selection_end] add frame_limit
@@ -9,7 +10,6 @@ scoreboard players operation $frame_id rc_id > @e[tag=frame] rc_id
 #Get max selected
 scoreboard players set $frame_array rc_frames 0
 scoreboard players operation $frame_array rc_frames > @e[tag=frame_limit] rc_id
-scoreboard players operation $frame_array rc_time = $frame_array rc_frames
 scoreboard players operation $frame_array rc_shift = $frame_array rc_frames
 scoreboard players add $frame_array rc_frames 200
 scoreboard players add $frame_array rc_shift 1199
@@ -32,7 +32,6 @@ scoreboard players operation $frame_id rc_id < @e[tag=frame] rc_id
 #Get min selected
 scoreboard players set $frame_array rc_frames 100000000
 scoreboard players operation $frame_array rc_frames < @e[tag=frame_limit] rc_id
-scoreboard players operation $frame_array rc_time = $frame_array rc_frames
 scoreboard players operation $frame_array rc_shift = $frame_array rc_frames
 scoreboard players remove $frame_array rc_frames 200
 scoreboard players remove $frame_array rc_shift 1199

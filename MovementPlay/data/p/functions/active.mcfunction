@@ -5,14 +5,19 @@ tag @e[tag=this_a] remove kill_a
 tp @e[tag=this_a] @s
 
 #Animation speed
+scoreboard players add @s speed 0
 scoreboard players remove @s pl_frequency 1
 
-scoreboard players set @s[scores={speed=4..}] pl_frequency 4
-scoreboard players set @s[scores={speed=3}] pl_frequency 2
-scoreboard players set @s[scores={speed=2}] pl_frequency 0
+scoreboard players set @s[scores={speed=2..}] pl_frequency 4
+scoreboard players set @s[scores={speed=1}] pl_frequency 2
+scoreboard players set @s[scores={speed=0}] pl_frequency 0
 
-scoreboard players set @s[scores={speed=1,pl_frequency=..-3}] pl_frequency -1
-scoreboard players set @s[scores={speed=..0,pl_frequency=..-5}] pl_frequency -1
+scoreboard players set @s[scores={speed=-1,pl_frequency=..-3}] pl_frequency -1
+scoreboard players set @s[scores={speed=-2,pl_frequency=..-5}] pl_frequency -1
+scoreboard players set @s[scores={speed=-3,pl_frequency=..-11}] pl_frequency -1
+scoreboard players set @s[scores={speed=-4,pl_frequency=..-21}] pl_frequency -1
+scoreboard players set @s[scores={speed=-5,pl_frequency=..-41}] pl_frequency -1
+scoreboard players set @s[scores={speed=..-6,pl_frequency=..-81}] pl_frequency -1
 
 #Read animation
 execute if entity @s[tag=!stop,scores={pl_frequency=-1..}] run function p:read
